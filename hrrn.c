@@ -15,7 +15,14 @@ int main()
 	p1[-1].ct=0;
 	printf("\nEnter the No. of processes :");
 	scanf("%d",&n);
-	for(i=0;i<n;i++)
+	if(n==0)
+	{
+		printf("Number Of Process cannot be zero");
+		return 0;
+	}
+	else
+	{
+		for(i=0;i<n;i++)
 	{
 		printf("\tEnter the arrival time of %d process :",i+1);
 		scanf(" %d",&p1[i].at);	
@@ -50,8 +57,8 @@ int main()
 		}
 		
 	}
-
-	for (t = p1[0].at; t < sumbt;)
+	t = p1[0].at;
+	for ( j=0;j < n ;j++)
 	{	hrrn=-9999;
         	for (i = 0; i < n; i++) 
 		{
@@ -111,5 +118,7 @@ printf("\n|\t\tAverage Turn Around Time : %f\t\t\t|",avgtat/n);
 printf("\n|                                                                       |" );
 printf("\n+-----------------------------------------------------------------------+" );
 printf("\n");
+	}
+
 return 0;
 }
